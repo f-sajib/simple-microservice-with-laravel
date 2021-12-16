@@ -20,8 +20,9 @@ DB_CONNECTION2=mysql
 
     REGISTRATION_SERVICE_BASE_URL:http://localhost:8001
 
-Now run migration and serve base service
+Now run migration and serve the base service
 > php artisan migrate
+
 > php artisan serve
 
 After setting up the Apigateway and running the base service, switch to register service directory and serve the project after setting up the connection for register service and run migrating.
