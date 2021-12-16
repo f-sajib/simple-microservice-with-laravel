@@ -25,7 +25,9 @@ Now run migration and serve the base service
 
 > php artisan serve
 
-After setting up the Apigateway and running the base service, switch to register service directory and serve the project after setting up the connection for register service and run migrating.
+> After setting up the Apigateway and running the base service, switch
+> to register service directory and serve the project after setting up
+> the connection for register service and run migrating.
 
 > cd ../registrationService
 
