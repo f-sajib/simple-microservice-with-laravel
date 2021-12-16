@@ -7,7 +7,7 @@
 > cd Apigateway
 
 Inside .env
-> Set the database environment for registration service in :
+> Set the database environment for registration service :
 
 DB_CONNECTION2=mysql  
     DB_HOST2=127.0.0.1  
