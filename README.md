@@ -6,8 +6,8 @@
 
 > cd Apigateway
 
-Inside .env
-> Set the database environment for registration service :
+**Inside .env
+Set the database environment for registration service in :**
 
 DB_CONNECTION2=mysql  
     DB_HOST2=127.0.0.1  
@@ -16,11 +16,13 @@ DB_CONNECTION2=mysql
     DB_USERNAME2=  
     DB_PASSWORD2=
 
-> Set the base url of registration service:
+**Set the base url of registration service:**
+
 
     REGISTRATION_SERVICE_BASE_URL:http://localhost:8001
 
-Now run migration and serve the base service
+**Now run migration and serve base service**
+
 > php artisan migrate
 
 > php artisan serve
