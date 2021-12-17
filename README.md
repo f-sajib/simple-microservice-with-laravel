@@ -1,10 +1,13 @@
 # simple-microservice-with-laravel
-**Follow the step to start**
+**Follow the steps to start:**
+
+
+**Go to Apigateway directory**
+> cd Apigateway
+
 1. composer install
 2. npm install && npm run dev
 3. php artisan jwt:secret
-
-> cd Apigateway
 
 **Inside .env
 Set the database environment for registration service in :**
@@ -27,10 +30,10 @@ DB_CONNECTION2=mysql
 
 > php artisan serve
 
-**After setting up the Apigateway and running the base service, switch to register service directory and serve the project after setting up the connection for register service and run migrating.**
+**After setting up the Apigateway and running the base service, switch to register service directory and serve the project after setting up the connection for register service and running migration.**
 
 > cd ../registrationService
 
 > php artisan migrate
 
->php artisan serve
+> php artisan serve
