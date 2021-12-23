@@ -8,6 +8,8 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Location\Coordinate;
+use Location\Polygon;
 
 class TaskController extends Controller
 {
@@ -64,15 +66,18 @@ class TaskController extends Controller
         if($lat && $lng) {
             $result[0] = [true];
             foreach ($data as $key => $value) {
+                $geofence = new Polygon();
                 foreach ($value['value'] as $location) {
-                    if($location[0] == $lat && $location[1] == $lng) {
-                        array_push($result,[
-                            'division' => $value['sheet'],
-                            'lat' => $lat,
-                            'lng' => $lng
-                        ]);
-                        break;
-                    }
+                    $geofence->addPoint(new Coordinate((float) $location[0],(float)$location[1]));
+                }
+                $insidePoint = new Coordinate((float)$lat, (float)$lng);
+                if($geofence->contains($insidePoint)) {
+                    array_push($result,[
+                        'division' => $value['sheet'],
+                        'lat' => $lat,
+                        'lng' => $lng
+                    ]);
+                    break;
                 }
             }
         }
